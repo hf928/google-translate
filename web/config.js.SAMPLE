@@ -1,0 +1,5 @@
+module.exports = {
+    selector: '.YOUR_SELECTOR',
+    endpoint: (query) => `//YOUR_ENDPOINT/${query}`,
+    delay: 150
+}
