@@ -1,11 +1,13 @@
 /**
  * TODO(developer): Uncomment the following line before running the sample.
  */
-const projectId = 'translate-288008';
-const keyFilename = './key.json'
 
 // Imports the Google Cloud client library
 const { Translate } = require('@google-cloud/translate').v2;
+
+const projectId = 'translate-288008';
+const keyFilename = './key.json'
+
 
 // Instantiates a client
 const translate = new Translate({
@@ -14,9 +16,9 @@ const translate = new Translate({
 });
 
 // text: The text to translate
-module.exports = async function quickStart(text, target = 'zh-tw') {
+module.exports = async (text, target = 'zh-tw') => {
 
-    // Translates some text into Russian
+    // Translates some text into zh-tw
     const [translation] = await translate.translate(text, target);
 
     return translation;
