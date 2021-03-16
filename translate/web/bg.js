@@ -6,7 +6,7 @@ setInterval(() => {
 
     const curText = (document.querySelector(config.selector).innerText).trim();
 
-    if (text !== curText) {
+    if (curText && text !== curText) {
 
         text = curText;
 
