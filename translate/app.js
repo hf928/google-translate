@@ -38,7 +38,9 @@ exports.lambdaHandler = async (event, context) => {
                 message: translation,
             }),
             'headers': {
-                'Content-Type': 'application/json'
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+                'Accept-Charset': 'UTF-8'
             }
         }
 

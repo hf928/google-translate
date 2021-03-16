@@ -3,3 +3,5 @@ key.json
 config.js
 .aws-sam
 .vscode
+extension/public/*.js
+extension/public/*.map

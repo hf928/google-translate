@@ -1,14 +1,10 @@
 {
-    "name": "hello_world",
+    "name": "translate",
     "version": "1.0.0",
-    "description": "hello world sample for NodeJS",
     "main": "app.js",
-    "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
-    "author": "SAM CLI",
     "license": "MIT",
     "dependencies": {
-        "@google-cloud/translate": "^6.1.0",
-        "axios": "^0.21.1"
+        "@google-cloud/translate": "^6.1.0"
     },
     "scripts": {
         "test": "mocha tests/unit/",
