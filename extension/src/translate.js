@@ -34,7 +34,7 @@ async function initDB () {
 }
 
 //接受訊息
-env.runtime.onMessage.addListener(async ({ action, status } ) => {
+env.runtime.onMessage.addListener(async ({ action, status }) => {
 
     const { idbTranslate } = await initDB();
 
@@ -47,7 +47,7 @@ env.runtime.onMessage.addListener(async ({ action, status } ) => {
                 const elem = document.querySelector(config.selector);
 
                 if (!elem) return;
-                
+
                 const curText = (elem.innerText).trim();
             
                 if (curText && text !== curText) {
@@ -93,8 +93,6 @@ env.runtime.onMessage.addListener(async ({ action, status } ) => {
         }
         
     }
-
-
 
 });
 

@@ -2,25 +2,21 @@
     "name": "Translate helper",
     "version": "1.0.0",
     "background": {
-        "scripts": ["bg.js"],
-        "persistent": false
+        "service_worker": "bg.js"
     },
-    "content_scripts": [
-        {
-            "all_frames": true,
-            "matches": ["https://www.udemy.com/course/*"],
-            "js": ["translate.js"],
-            "run_at": "document_end"
-        }
-    ],
+    "content_scripts": [{
+        "all_frames": true,
+        "matches": ["https://www.udemy.com/course/*"],
+        "js": ["translate.js"],
+        "run_at": "document_end"
+    }],
     "permissions": [
-        "https://www.udemy.com/course/*",
         "background",
-        "storage"
+        "storage",
+        "tabs"
     ],
-    "browser_action": {
+    "action": {
         "default_title": "翻譯一波了啦"
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }
-  

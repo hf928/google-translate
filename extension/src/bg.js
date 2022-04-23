@@ -12,7 +12,6 @@ function checkPageHandle (id) {
         flag = false;
         setTimeout(() => flag = true, 10);
 
-        
         env.tabs.get(id, (tab) => {
 
             env.storage.sync.get(['translateStatus'], (result) => {
@@ -35,19 +34,21 @@ function checkPageHandle (id) {
 
 const setBtnBadge = (isActive) => {
 
-    env.browserAction.setBadgeBackgroundColor({ color: (isActive ? '#22cc99' : '#666666') });
-    env.browserAction.setBadgeText({ text: (isActive ? 'O' : 'X') });
+    env.action.setBadgeBackgroundColor({ color: (isActive ? '#22cc99' : '#666666') });
+    env.action.setBadgeText({ text: (isActive ? 'O' : 'X') });
 
 }
 
 // 點擊觸發
-env.browserAction.onClicked.addListener((tab) => {
-
+env.action.onClicked.addListener((tab) => {
+console.log(111);
     env.storage.sync.get(['translateStatus'], (result) => {
+        console.log(222);
 
         const isActive = !result.translateStatus;
 
         env.storage.sync.set({ translateStatus: isActive }, () => {
+            console.log(333);
 
             setBtnBadge(isActive);
             env.tabs.sendMessage(tab.id, { action: 'translate', status: isActive });
