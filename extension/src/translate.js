@@ -44,7 +44,11 @@ env.runtime.onMessage.addListener(async ({ action, status } ) => {
 
             timer = setInterval(async () => {
 
-                const curText = (document.querySelector(config.selector).innerText).trim();
+                const elem = document.querySelector(config.selector);
+
+                if (!elem) return;
+                
+                const curText = (elem.innerText).trim();
             
                 if (curText && text !== curText) {
             
