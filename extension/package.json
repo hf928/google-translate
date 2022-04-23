@@ -5,12 +5,15 @@
     "scripts": {
         "watch": "webpack --watch",
         "build": "webpack --production"
-      },
+    },
     "dependencies": {
         "@babel/core": "^7.7.5",
+        "@babel/plugin-transform-runtime": "^7.17.0",
         "@babel/polyfill": "^7.7.0",
         "@babel/preset-env": "^7.7.6",
+        "@babel/runtime": "^7.17.9",
         "babel-loader": "^8.0.6",
+        "idb": "^7.0.1",
         "webpack": "^4.41.2",
         "webpack-cli": "^3.3.10"
     }
